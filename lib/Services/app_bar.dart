@@ -1,8 +1,10 @@
 import 'package:algoriza_task1_app/Services/globals.dart';
+import 'package:algoriza_task1_app/localizations.dart';
 import 'package:algoriza_task1_app/theme.dart';
 import 'package:flutter/material.dart';
 
 import '../Screens/Intro.dart';
+import '../Screens/langugeMain.dart';
 import 'cookies_class.dart';
 
 class CustomAppBarUpdated extends StatefulWidget {
@@ -45,15 +47,14 @@ class _CustomAppBarUpdatedState extends State<CustomAppBarUpdated> {
         padding: widget.custom_padding != null
             ? widget.custom_padding!
             : EdgeInsets.only(
-                top: top + MediaQuery.of(context).padding.top ,
+                top: top + MediaQuery.of(context).padding.top,
                 bottom: space1,
                 right: side,
                 left: side),
         child: Column(
           children: [
             Visibility(
-              visible:
-                  widget.hasLogo != null && widget.hasLogo! ? true : false,
+              visible: widget.hasLogo != null && widget.hasLogo! ? true : false,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -65,9 +66,7 @@ class _CustomAppBarUpdatedState extends State<CustomAppBarUpdated> {
                     height: widget.logo_height != null
                         ? widget.logo_height
                         : MediaQuery.of(context).size.width / 6,
-                    color: widget.logo_color != null
-                        ? widget.logo_color
-                        : null,
+                    color: widget.logo_color != null ? widget.logo_color : null,
                   )
                 ],
               ),
@@ -114,9 +113,19 @@ class BackIconAppBar extends StatelessWidget {
         }
       },
       child: Padding(
-        padding:  EdgeInsets.only(top: space1, bottom: space1,
-          left:lang == null ?0 :lang=='ar' ?0.0  :space1,
-          right:lang == null ?0 :lang=='en' ?space1  :0,
+        padding: EdgeInsets.only(
+          top: space1,
+          bottom: space1,
+          left: lang == null
+              ? 0
+              : lang == 'ar'
+                  ? 0.0
+                  : space1,
+          right: lang == null
+              ? 0
+              : lang == 'en'
+                  ? space1
+                  : 0,
         ),
         child: Image.asset(
           lang == 'en'
@@ -145,11 +154,19 @@ class CloseIconAppBar extends StatelessWidget {
         Navigator.pushNamed(context, '/welcome');
       },
       child: Padding(
-        padding:  EdgeInsets.only(top: space1, bottom: space1,
-          left:lang == null ?0 :lang=='en' ?0.0  :space1,
-          right:lang == null ?0 :lang=='en' ?space1  :0,
-
-
+        padding: EdgeInsets.only(
+          top: space1,
+          bottom: space1,
+          left: lang == null
+              ? 0
+              : lang == 'en'
+                  ? 0.0
+                  : space1,
+          right: lang == null
+              ? 0
+              : lang == 'en'
+                  ? space1
+                  : 0,
         ),
         child: Image.asset(
           'assets/common/close_icon.webp',
@@ -180,37 +197,27 @@ class Logo extends StatelessWidget {
   }
 }
 
-class MenuIconAppBar extends StatelessWidget {
-  final Color? color;
+class LanWidgetAppbar extends StatelessWidget {
+  final String? screen;
   final String? lang;
-  final Function? onTap;
 
-  const MenuIconAppBar({Key? key, this.color, this.onTap, this.lang}) : super(key: key);
+  const LanWidgetAppbar({Key? key, this.screen, this.lang}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      behavior: HitTestBehavior.translucent,
       onTap: () {
-        onTap!();
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => LangugeMain(
+                      screen: screen,
+                    )));
       },
-      child: Padding(
-        padding:  EdgeInsets.only(top: space1, bottom: space1,
-          left:lang == null ?0 :lang=='en' ?0.0  :space1,
-          right:lang == null ?0 :lang=='en' ?space1  :0,
-
-
-        ),
-        child: Image.asset(
-          'assets/common/menu.webp',
-          width: 20,
-          height: 15,
-          color: color != null ? color : null,
-        ),
+      child: Text(
+        AppLocalizations.of(context)!.lang,
+        style: OwnColors.suitableBlackBold(lang),
       ),
     );
   }
 }
-
-
-

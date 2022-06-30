@@ -82,11 +82,12 @@ class _CustomTextBoxNormalState extends State<CustomTextBoxNormal> {
                     isExpanded: false,
                     iconSize: 0,
                     isDense: false,
-                    initialValue: 'AR',
+                    initialValue: 'EG',
                     itemBuilder: _buildDropdownItem,
                     priorityList:[
-                      CountryPickerUtils.getCountryByIsoCode('GB'),
-                      CountryPickerUtils.getCountryByIsoCode('CN'),
+                      CountryPickerUtils.getCountryByIsoCode('EG'),
+                      CountryPickerUtils.getCountryByIsoCode('KW'),
+                      CountryPickerUtils.getCountryByIsoCode('SA'),
                     ],
                     sortComparator: (Country a, Country b) => a.isoCode.compareTo(b.isoCode),
                     onValuePicked: (Country country) {

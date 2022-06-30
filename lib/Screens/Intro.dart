@@ -114,7 +114,6 @@ class _IntroState extends State<Intro> {
           }
           return supportedLocales.first;
         },
-        // initialRoute: '/welcome',
         onGenerateRoute: RouteGenerator.generateRoute,
         home: SplashScreen(),
       ),

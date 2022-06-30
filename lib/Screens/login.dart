@@ -3,6 +3,7 @@ import 'package:algoriza_task1_app/Services/app_bar.dart';
 import 'package:algoriza_task1_app/Services/cookies_class.dart';
 import 'package:algoriza_task1_app/Services/custom_button.dart';
 import 'package:algoriza_task1_app/Services/globals.dart';
+import 'package:algoriza_task1_app/Services/pattern_header.dart';
 import 'package:algoriza_task1_app/localizations.dart';
 import 'package:algoriza_task1_app/theme.dart';
 import 'package:flutter/gestures.dart';
@@ -59,17 +60,17 @@ class _LogInState extends State<LogIn> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: space2),
-                      child: Container(
+                        padding: const EdgeInsets.only(bottom: space2),
+                        child:CustomHeader(
                           width: MediaQuery.of(context).size.width,
                           height: MediaQuery.of(context).size.height * 0.3,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                            image: AssetImage(
-                              "assets/pattern_bg.png",
+                          child: CustomAppBarUpdated(
+                            actionWidget: LanWidgetAppbar(
+                              lang: lang,
+                              screen: 'login',
                             ),
-                            fit: BoxFit.fill,
-                          ))),
+                          ),
+                        )
                     ),
                     Padding(
                       padding: EdgeInsets.only(

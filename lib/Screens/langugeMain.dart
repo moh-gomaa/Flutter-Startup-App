@@ -8,6 +8,9 @@ import 'package:algoriza_task1_app/theme.dart';
 import 'package:flutter/material.dart';
 
 class LangugeMain extends StatefulWidget {
+  final String? screen;
+
+  const LangugeMain({Key? key, this.screen}) : super(key: key);
   @override
   _LangugeMainState createState() => _LangugeMainState();
 }
@@ -87,9 +90,15 @@ class _LangugeMainState extends State<LangugeMain> {
                       Intro.setLocale(context, "ar");
                       addStringToSF("lang", "ar");
 
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/slide123', (Route<dynamic> route) => false);
+                      if(widget.screen != null){
+                        Navigator.pushReplacementNamed(context, '/${widget.screen}');
+
+                      }else{
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            '/onBoarding', (Route<dynamic> route) => false);
+                      }
                     },
+
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: buttonSafeArea,
@@ -120,9 +129,15 @@ class _LangugeMainState extends State<LangugeMain> {
                       addStringToSF("lang", "en");
                       Intro.setLocale(context, "en");
                       addStringToSF("lang", "en");
+                      if(widget.screen != null){
 
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/slide123', (Route<dynamic> route) => false);
+                      Navigator.pushReplacementNamed(context, '/${widget.screen}');
+
+                      }else{
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            '/onBoarding', (Route<dynamic> route) => false);
+                      }
+
                     },
                     child: Container(
                       margin: EdgeInsets.only(

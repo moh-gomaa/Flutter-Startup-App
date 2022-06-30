@@ -1,8 +1,10 @@
-
+import 'package:algoriza_task1_app/Screens/Intro.dart';
+import 'package:algoriza_task1_app/Screens/langugeMain.dart';
 import 'package:algoriza_task1_app/Services/TextBoxNormal.dart';
 import 'package:algoriza_task1_app/Services/app_bar.dart';
 import 'package:algoriza_task1_app/Services/cookies_class.dart';
 import 'package:algoriza_task1_app/Services/globals.dart';
+import 'package:algoriza_task1_app/Services/pattern_header.dart';
 import 'package:algoriza_task1_app/localizations.dart';
 import 'package:algoriza_task1_app/theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,7 +12,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../Services/custom_button.dart';
-
 
 bool isVerified = false;
 
@@ -31,8 +32,6 @@ class _SignUpState extends State<SignUp> {
 
   bool canSave = false;
 
-
-
   Future<String?> getLang() async {
     return await getValuesSF("lang");
   }
@@ -41,55 +40,48 @@ class _SignUpState extends State<SignUp> {
   TextEditingController mail = new TextEditingController();
   TextEditingController password = new TextEditingController();
 
-
-
   @override
   void initState() {
     super.initState();
     getLang().then((value) {
       setState(() {
         lang = value;
-
       });
     });
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      bottomSheet:
-        Container(
-          color: OwnColors.color2[50],
-
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: bottom, right: side, left: side, top: space1),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        AppLocalizations().accept_condition_msg,
-                        style: OwnColors.normalGray(lang),
-                      ),
-                      Text(
-                        AppLocalizations().terms_condition,
-                        style: OwnColors.normalHyperLinkBold(lang),
-                      ),
-                    ],
-                  ),
+      bottomSheet: Container(
+        color: OwnColors.color2[50],
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    bottom: bottom, right: side, left: side, top: space1),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      AppLocalizations().accept_condition_msg,
+                      style: OwnColors.normalGray(lang),
+                    ),
+                    Text(
+                      AppLocalizations().terms_condition,
+                      style: OwnColors.normalHyperLinkBold(lang),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-
-
+      ),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -99,23 +91,19 @@ class _SignUpState extends State<SignUp> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-
                     Padding(
                       padding: const EdgeInsets.only(bottom: space2),
-                      child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height * 0.15,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/pattern_bg.png",
-                                ),
-                                fit: BoxFit.cover,
-
-                              ))
-                      ,child: CustomAppBarUpdated(leadingWidget: BackIconAppBar(),
-                      ),
-                      ),
+                      child:CustomHeader(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.15,
+                        child: CustomAppBarUpdated(
+                          leadingWidget: BackIconAppBar(lang: lang),
+                          actionWidget: LanWidgetAppbar(
+                            lang: lang,
+                            screen: 'signup',
+                          ),
+                        ),
+                      )
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -130,7 +118,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(vertical: space2),
+                                const EdgeInsets.symmetric(vertical: space2),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -160,9 +148,9 @@ class _SignUpState extends State<SignUp> {
                               ],
                             ),
                           ),
-
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: space1),
+                            padding:
+                                const EdgeInsets.symmetric(vertical: space1),
                             child: CustomTextBoxNormal(
                               title: AppLocalizations.of(context)!.mail_hint,
                               keyboardPadding: true,
@@ -172,7 +160,6 @@ class _SignUpState extends State<SignUp> {
                               tec: mail,
                             ),
                           ),
-
                           CustomTextBoxNormal(
                             title: AppLocalizations.of(context)!.phone_hint,
                             keyboardPadding: true,
@@ -182,11 +169,12 @@ class _SignUpState extends State<SignUp> {
                             tec: phone,
                             countryPicker: true,
                           ),
-
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: space1),
+                            padding:
+                                const EdgeInsets.symmetric(vertical: space1),
                             child: CustomTextBoxNormal(
-                              title: AppLocalizations.of(context)!.password_hint,
+                              title:
+                                  AppLocalizations.of(context)!.password_hint,
                               keyboardPadding: true,
                               lang: lang,
                               index: 3,
@@ -194,9 +182,9 @@ class _SignUpState extends State<SignUp> {
                               tec: password,
                             ),
                           ),
-
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: space1),
+                            padding:
+                                const EdgeInsets.symmetric(vertical: space1),
                             child: CustomButton(
                               lang: lang,
                               bgColor: OwnColors.color2[900],
@@ -229,20 +217,19 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ],
                           ),
-
                           Padding(
-                            padding: const EdgeInsets.only(top: space1, bottom: space2),
+                            padding: const EdgeInsets.only(
+                                top: space1, bottom: space2),
                             child: CustomButton(
                               lang: lang,
                               bgColor: Colors.transparent,
                               text: AppLocalizations.of(context)!.google_sign,
                               textStyle: OwnColors.normalHyperLink(lang),
-                              border: Border.all(color: OwnColors.color2[900]!,width: 1),
+                              border: Border.all(
+                                  color: OwnColors.color2[900]!, width: 1),
                               radius: 0,
                               imgPath: 'assets/google_icon.png',
-                              onClick: () {
-
-                              },
+                              onClick: () {},
                             ),
                           ),
                           Center(
@@ -250,7 +237,7 @@ class _SignUpState extends State<SignUp> {
                               text: TextSpan(children: [
                                 TextSpan(
                                     text: AppLocalizations.of(context)!
-                                        .sign_in_msg +
+                                            .sign_in_msg +
                                         ' ',
                                     style: OwnColors.suitableGrayBold(lang),
                                     recognizer: TapGestureRecognizer()
@@ -258,23 +245,19 @@ class _SignUpState extends State<SignUp> {
                                 TextSpan(
                                     text: AppLocalizations.of(context)!
                                         .sign_in_here,
-                                    style: OwnColors.suitableHyperLink(lang!),
+                                    style: OwnColors.suitableHyperLink(lang),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        Navigator.pushNamed(
-                                            context, "/login");
+                                        Navigator.pushNamed(context, "/login");
                                       }),
                               ]),
                             ),
                           ),
-
                         ],
                       ),
                     ),
                   ],
                 ),
-
-
               ],
             ),
           ),
@@ -282,7 +265,4 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
-
-
-
 }
