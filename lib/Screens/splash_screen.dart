@@ -1,6 +1,6 @@
-import 'package:algoriza_task1_app/Services/app_bar.dart';
+import 'package:startup_app/Services/app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:algoriza_task1_app/Services/cookies_class.dart';
+import 'package:startup_app/Services/cookies_class.dart';
 
 class SplashScreen extends StatefulWidget {
   // final Data data;

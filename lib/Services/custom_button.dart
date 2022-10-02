@@ -1,5 +1,5 @@
-import 'package:algoriza_task1_app/Services/globals.dart';
-import 'package:algoriza_task1_app/theme.dart';
+import 'package:startup_app/Services/globals.dart';
+import 'package:startup_app/theme.dart';
 import 'package:flutter/widgets.dart';
 
 class CustomButton extends StatefulWidget {

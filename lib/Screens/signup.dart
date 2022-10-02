@@ -1,12 +1,10 @@
-import 'package:algoriza_task1_app/Screens/Intro.dart';
-import 'package:algoriza_task1_app/Screens/langugeMain.dart';
-import 'package:algoriza_task1_app/Services/TextBoxNormal.dart';
-import 'package:algoriza_task1_app/Services/app_bar.dart';
-import 'package:algoriza_task1_app/Services/cookies_class.dart';
-import 'package:algoriza_task1_app/Services/globals.dart';
-import 'package:algoriza_task1_app/Services/pattern_header.dart';
-import 'package:algoriza_task1_app/localizations.dart';
-import 'package:algoriza_task1_app/theme.dart';
+import 'package:startup_app/Services/TextBoxNormal.dart';
+import 'package:startup_app/Services/app_bar.dart';
+import 'package:startup_app/Services/cookies_class.dart';
+import 'package:startup_app/Services/globals.dart';
+import 'package:startup_app/Services/pattern_header.dart';
+import 'package:startup_app/localizations.dart';
+import 'package:startup_app/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -151,7 +149,8 @@ class _SignUpState extends State<SignUp> {
                           Padding(
                             padding:
                                 const EdgeInsets.symmetric(vertical: space1),
-                            child: CustomTextBoxNormal(
+                            child:
+                            CustomTextBoxNormal(
                               title: AppLocalizations.of(context)!.mail_hint,
                               keyboardPadding: true,
                               lang: lang,

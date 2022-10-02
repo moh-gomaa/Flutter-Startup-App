@@ -1,9 +1,9 @@
-import 'package:algoriza_task1_app/Models/data_change_lang.dart';
-import 'package:algoriza_task1_app/Screens/splash_screen.dart';
-import 'package:algoriza_task1_app/Services/cookies_class.dart';
-import 'package:algoriza_task1_app/Services/route_generator.dart';
-import 'package:algoriza_task1_app/localizations.dart';
-import 'package:algoriza_task1_app/theme.dart';
+import 'package:startup_app/Models/data_change_lang.dart';
+import 'package:startup_app/Screens/splash_screen.dart';
+import 'package:startup_app/Services/cookies_class.dart';
+import 'package:startup_app/Services/route_generator.dart';
+import 'package:startup_app/localizations.dart';
+import 'package:startup_app/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

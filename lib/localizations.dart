@@ -1,4 +1,4 @@
-import 'package:algoriza_task1_app/lang/messages_all.dart';
+import 'package:startup_app/lang/messages_all.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

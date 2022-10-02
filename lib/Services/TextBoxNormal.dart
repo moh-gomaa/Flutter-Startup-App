@@ -3,8 +3,8 @@
 // index 2 mail
 // index 3 password
 
-import 'package:algoriza_task1_app/Services/globals.dart';
-import 'package:algoriza_task1_app/theme.dart';
+import 'package:startup_app/Services/globals.dart';
+import 'package:startup_app/theme.dart';
 import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_pickers.dart';
 import 'package:flutter/material.dart';

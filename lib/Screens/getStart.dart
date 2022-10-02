@@ -1,9 +1,9 @@
-import 'package:algoriza_task1_app/Services/app_bar.dart';
-import 'package:algoriza_task1_app/Services/cookies_class.dart';
-import 'package:algoriza_task1_app/Services/custom_button.dart';
-import 'package:algoriza_task1_app/Services/globals.dart';
-import 'package:algoriza_task1_app/localizations.dart';
-import 'package:algoriza_task1_app/theme.dart';
+import 'package:startup_app/Services/app_bar.dart';
+import 'package:startup_app/Services/cookies_class.dart';
+import 'package:startup_app/Services/custom_button.dart';
+import 'package:startup_app/Services/globals.dart';
+import 'package:startup_app/localizations.dart';
+import 'package:startup_app/theme.dart';
 import 'package:flutter/material.dart';
 
 class GetStart extends StatefulWidget {

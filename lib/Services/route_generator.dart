@@ -1,10 +1,10 @@
-import 'package:algoriza_task1_app/Models/data_change_lang.dart';
-import 'package:algoriza_task1_app/Screens/Intro.dart';
-import 'package:algoriza_task1_app/Screens/getStart.dart';
-import 'package:algoriza_task1_app/Screens/langugeMain.dart';
-import 'package:algoriza_task1_app/Screens/login.dart';
-import 'package:algoriza_task1_app/Screens/onboarding.dart';
-import 'package:algoriza_task1_app/Screens/signup.dart';
+import 'package:startup_app/Models/data_change_lang.dart';
+import 'package:startup_app/Screens/Intro.dart';
+import 'package:startup_app/Screens/getStart.dart';
+import 'package:startup_app/Screens/langugeMain.dart';
+import 'package:startup_app/Screens/login.dart';
+import 'package:startup_app/Screens/onboarding.dart';
+import 'package:startup_app/Screens/signup.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {

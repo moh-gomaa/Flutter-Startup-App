@@ -1,11 +1,8 @@
-import 'package:algoriza_task1_app/Services/globals.dart';
-import 'package:algoriza_task1_app/localizations.dart';
-import 'package:algoriza_task1_app/theme.dart';
+import 'package:startup_app/Services/globals.dart';
+import 'package:startup_app/localizations.dart';
+import 'package:startup_app/theme.dart';
 import 'package:flutter/material.dart';
-
-import '../Screens/Intro.dart';
 import '../Screens/langugeMain.dart';
-import 'cookies_class.dart';
 
 class CustomAppBarUpdated extends StatefulWidget {
   final String? title;
