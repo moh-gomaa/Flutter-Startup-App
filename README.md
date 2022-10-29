@@ -1,6 +1,4 @@
-# algoriza_task1_app
-
-Algoriza_Task1
+# Flutter Startup App
 
 ## Getting Started
 
